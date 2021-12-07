@@ -1,0 +1,104 @@
+
+:root {
+    font-size: 18px;
+    --perspective: 300px;
+    --perspective-placeholder: 300;
+    --z-positive-value: 200px;
+    --z-positive-placeholder: 200;
+    --z-negative-value: -300px;
+    --z-negative-placeholder: -300;
+    /* --scale-value: calc(1 + var(--z-transform-value * -1) / var(--perspective)); */
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.blue-violet {background-color: blueviolet;}
+.red {background-color: red;}
+.pink {background-color: pink;}
+.crimson {background-color: crimson;}
+.orange {background-color: orange;}
+.lime {background-color: lime;}
+
+.all-parallax-container {
+    height: 100vh;
+    perspective: var(--perspective);
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.align-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.all-parallax-container .parallax-section {
+    font-size: 3rem;
+    transform-style: preserve-3d;
+    position: relative;
+    height: 100vh;
+    
+}
+.all-parallax-container .parallax-section .parallax-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}
+.parallax-section:nth-child(1) {
+    z-index: 1;
+}
+.parallax-section:nth-child(2) .parallax-box:nth-child(1) {
+    transform: translateZ(calc(var(--z-negative-value))) scale(calc(1 + var(--z-negative-placeholder) * -1 / var(--perspective-placeholder)));
+    z-index: -1;
+}
+.parallax-section:nth-child(2) .parallax-box:nth-child(2) {
+    transform: translateZ(0);
+}
+.parallax-section:nth-child(3) .parallax-box:nth-child(1) {
+    transform: translateZ(0);
+}
+.parallax-section:nth-child(3) .parallax-box:nth-child(2) {
+    transform: translateZ(var(--z-positive-value)) scale(calc(1 + var(--z-positive-placeholder) * -1 / var(--perspective-placeholder)));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
